@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teatro Histórico Español</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff0f0;
+            color: #333;
+        }
+
+        h1 {
+            color: #c41e3a;
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+        }
+
+        .search-container {
+            margin-bottom: 30px;
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(196, 30, 58, 0.2);
+        }
+
+        .search-container input {
+            padding: 10px 15px;
+            margin: 0 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            width: 200px;
+            font-size: 1em;
+        }
+
+        .search-container button {
+            padding: 10px 20px;
+            background-color: #c41e3a;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .search-container button:hover {
+            background-color: #a01830;
+        }
+
+        .periodos-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+
+        .periodo-btn {
+            padding: 8px 16px;
+            border: none;
+            border-radius: 20px;
+            background-color: white;
+            color: #c41e3a;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s;
+            box-shadow: 0 2px 5px rgba(196, 30, 58, 0.1);
+        }
+
+        .periodo-btn:hover {
+            background-color: #c41e3a;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .obra {
+            background-color: white;
+            border: none;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .obra:hover {
+            transform: translateY(-3px);
+        }
+
+        .obra h3 {
+            color: #c41e3a;
+            margin-top: 0;
+        }
+
+        .subobra {
+            margin-left: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .subobra h4 {
+            color: #c41e3a;
+            margin-top: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Teatro Histórico Español</h1>
+    
+    <div class="search-container">
+        <input type="text" id="titulo" placeholder="Buscar por título">
+        <input type="text" id="autor" placeholder="Buscar por autor">
+        <input type="text" id="fecha" placeholder="Buscar por fecha">
+        <button onclick="buscarObras()">Buscar</button>
+    </div>
+
+    <div id="periodos" class="periodos-list"></div>
+    <div id="resultados"></div>
+
+    <script>
+        const API_URL = 'http://localhost:8000';
+
+        // Cargar períodos al iniciar
+        async function cargarPeriodos() {
+            const response = await fetch(`${API_URL}/periodos`);
+            const data = await response.json();
+            const periodosDiv = document.getElementById('periodos');
+            
+            // Ordenar los períodos usando el primer año
+            const periodosOrdenados = data.periodos.sort((a, b) => {
+                const yearA = parseInt(a.split('-')[0]);
+                const yearB = parseInt(b.split('-')[0]);
+                return yearA - yearB;
+            });
+            
+            periodosDiv.innerHTML = periodosOrdenados.map(periodo => 
+                `<button class="periodo-btn" onclick="cargarPeriodo('${periodo}')">${periodo}</button>`
+            ).join('');
+        }
+
+        async function cargarPeriodo(periodo) {
+            const response = await fetch(`${API_URL}/periodo/${periodo}`);
+            const data = await response.json();
+            mostrarResultados(data.obras);
+        }
+
+        async function buscarObras() {
+            const titulo = document.getElementById('titulo').value;
+            const autor = document.getElementById('autor').value;
+            const fecha = document.getElementById('fecha').value;
+
+            const params = new URLSearchParams();
+            if (titulo) params.append('titulo', titulo);
+            if (autor) params.append('autor', autor);
+            if (fecha) params.append('fecha', fecha);
+
+            const response = await fetch(`${API_URL}/buscar?${params}`);
+            const data = await response.json();
+            mostrarResultados(data.resultados);
+        }
+
+        function mostrarResultados(obras) {
+            const resultadosDiv = document.getElementById('resultados');
+            resultadosDiv.innerHTML = obras.map(obra => `
+                <div class="obra">
+                    <h3>${obra.titulo}</h3>
+                    <p><strong>Autor:</strong> ${obra.autor}</p>
+                    <p><strong>Fecha:</strong> ${obra.fecha}</p>
+                    ${obra.personajes ? `
+                        <p><strong>Personajes:</strong> ${obra.personajes.join(', ')}</p>
+                    ` : ''}
+                    ${obra.detalles ? `
+                        <p><strong>Detalles:</strong></p>
+                        <pre>${JSON.stringify(obra.detalles, null, 2)}</pre>
+                    ` : ''}
+                    ${obra.subobras ? `
+                        <p><strong>Subobras:</strong></p>
+                        ${obra.subobras.map(subobra => `
+                            <div class="subobra">
+                                <h4>${subobra.titulo}</h4>
+                                ${subobra.personajes ? `
+                                    <p><strong>Personajes:</strong> ${subobra.personajes.join(', ')}</p>
+                                ` : ''}
+                            </div>
+                        `).join('')}
+                    ` : ''}
+                </div>
+            `).join('');
+        }
+
+        // Iniciar la aplicación
+        cargarPeriodos();
+    </script>
+</body>
+</html>

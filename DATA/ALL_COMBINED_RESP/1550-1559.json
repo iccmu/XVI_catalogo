@@ -1,0 +1,129 @@
+{
+    "periodo": "1550-1559",
+    "obras": [
+      {
+        "id": 1,
+        "titulo": "Entremés que hizo el aucto a ruego de una monja parienta suya",
+        "autor": "SEBASTIÁN DE HOROZCO",
+        "fecha": "1550",
+        "personajes": [
+          "Villano",
+          "Fraile",
+          "Buhonero",
+          "Alcaid"
+        ],
+        "detalles": {
+          "editor": "F. González Ollé [1979: 135-174]",
+          "trama": "Un Villano viene a comprar al Alcaid ciertas cosas para dar a una moça. Un Fraile pide para las ánimas de Purgatorio. Comen buhuelos y mantean al fraile."
+        }
+      },
+      {
+        "id": 2,
+        "titulo": "Comedia llamada Tidea",
+        "autor": "FRANCISCO DE LAS NATAS",
+        "fecha": "1550",
+        "personajes": [
+          "Don Tideo",
+          "Prudente",
+          "Fielno",
+          "Beroe",
+          "Faustina",
+          "Justina",
+          "Damon",
+          "Menalcas",
+          "Rifeo",
+          "Trecia"
+        ],
+        "detalles": {
+          "formato": "4º, 16 hs",
+          "ubicacion": "Bayerische Staatsbibliothek de Munich (perdida)",
+          "editores": [
+            "Urban CRONAN (BIBLIOFILOS, I-81)",
+            "Miguel Ángel Pérez Priego [1993: 135-209]"
+          ]
+        }
+      },
+      {
+        "id": 3,
+        "titulo": "Comedia Ramnuria",
+        "autor": "ANÓNIMA",
+        "fecha": "1550",
+        "detalles": {
+          "lugar": "Venecia",
+          "notas": "Mencionada en el Índice de 1559"
+        }
+      },
+      {
+        "id": 4,
+        "titulo": "Comedia llamada Rosabella",
+        "autor": "Martín de Santander",
+        "fecha": "1550",
+        "personajes": [
+          "Jasminio",
+          "Vizcaíno",
+          "Negro",
+          "Rosabella",
+          "Libeo",
+          "Alguacil",
+          "Pabro"
+        ],
+        "detalles": {
+          "formato": "4º, 12 hs",
+          "ubicacion": "Biblioteca Estense de Módena"
+        }
+      },
+      {
+        "id": 5,
+        "titulo": "Comedia a lo pastoral para la noche de Navidad",
+        "autor": "ANÓNIMA",
+        "fecha": "ca. 1551",
+        "personajes": [
+          "La Divinidad",
+          "La Justicia",
+          "La Misericordia",
+          "La Verdad",
+          "La Paz",
+          "Pastores",
+          "Naturaleza Humana",
+          "El Deseo",
+          "El Verbo Eterno",
+          "El Amor",
+          "Un Ángel",
+          "Nuestra Señora",
+          "Joseph"
+        ],
+        "detalles": {
+          "ubicacion": "Biblioteca Nacional",
+          "editor": "J. P. W. Crawford (Revue Hispanique, XXIV [1911], 497-541)"
+        }
+      },
+      {
+        "id": 6,
+        "titulo": "Comedia de Sergio",
+        "autor": "ANÓNIMA",
+        "fecha": "ca. 1550-1559",
+        "detalles": {
+          "notas": "Versión de Il Sergio de Ludovico Fenerallo",
+          "prohibicion": "Índice de 1559"
+        }
+      },
+      {
+        "id": 7,
+        "titulo": "Égloga al Santísimo Sacramento sobre la parábola evangélica",
+        "autor": "ANÓNIMA",
+        "fecha": "mediados del XVI"
+      },
+      {
+        "id": 8,
+        "titulo": "Égloga al Santísimo sobre la figura de Melquisedec",
+        "autor": "ANÓNIMA",
+        "fecha": "mediados del XVI"
+      },
+      {
+        "id": 9,
+        "titulo": "Égloga intitulada Viaje del Cielo",
+        "autor": "ANÓNIMA",
+        "fecha": "ca. 1550"
+      }
+    ]
+  }

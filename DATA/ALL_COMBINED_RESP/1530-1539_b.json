@@ -1,0 +1,141 @@
+{
+  "periodo": "1530-1539",
+  "obras": [
+    {
+      "id": 51,
+      "titulo": "Farsa en coplas",
+      "autor": "ANÓNIMA",
+      "fecha": "ca. 1530-1539",
+      "detalles": {
+        "versos_iniciales": "Oh gracias y gracias / al gran poderoso",
+        "referencias": [
+          "E. COTARELO (CATÁLOGO, nº 32, pág. 11)",
+          "Regestrum (nº 12257)"
+        ]
+      }
+    },
+    {
+      "id": 52,
+      "titulo": "Felisea, comedia en coplas",
+      "autor": "ANÓNIMA",
+      "fecha": "ca. 1530-1539",
+      "detalles": {
+        "versos_iniciales": "Oh Dios guarde y acresciente / novio y novia",
+        "lugar_probable": "Sevilla",
+        "referencias": [
+          "E. COTARELO (CATÁLOGO, nº 34, pág. 12)",
+          "Regestrum (nº 13079)"
+        ]
+      }
+    },
+    {
+      "id": 53,
+      "titulo": "Égloga de Flamiano y otros cuatro pastores, en coplas",
+      "autor": "ANÓNIMA",
+      "fecha": "ca. 1530-1539",
+      "detalles": {
+        "versos_iniciales": "No es mí mal para sufrir, / ni se puede remediar",
+        "referencias": [
+          "E. COTARELO, CATÁLOGO, nº 35, pág. 12",
+          "Regestrum (nº 12565)"
+        ]
+      }
+    },
+    {
+      "id": 54,
+      "titulo": "Florinela, farsa en coplas",
+      "autor": "ANÓNIMA",
+      "fecha": "ca. 1530-1539",
+      "detalles": {
+        "versos_iniciales": "Dios salve todo el rebaño / y conserve aquesta fiesta",
+        "lugar_probable": "Sevilla",
+        "referencias": [
+          "A. COTARELO (CATÁLOGO, nº 37, pág. 12)",
+          "Regestrum (nº 13098)"
+        ]
+      }
+    },
+    {
+      "id": 55,
+      "titulo": "Jacinta, comedia con una epístola",
+      "autor": "BARTOLOMÉ DE TORRES NAHARRO",
+      "fecha": "ca. 1535-1540",
+      "detalles": {
+        "lugar_probable": "Burgos",
+        "impresor": "Juan de Junta",
+        "referencias": [
+          "E. COTARELO (CATÁLOGO, nº 40, pág. 13)",
+          "J. E. GILLET (PROFALDIADA, t. I, 89-91)",
+          "Regestrum (nº 12314 y 15035)"
+        ]
+      }
+    },
+    {
+      "id": 56,
+      "titulo": "Comedia llamada Josefina",
+      "autor": "ANÓNIMA",
+      "fecha": "ca. 1535-1540",
+      "detalles": {
+        "nota": "También conocida como Tragedia llamada Josephina",
+        "referencias": [
+          "E. COTARELO (CATÁLOGO, nº 41, pág. 13)",
+          "Catálogo 1530: 10"
+        ]
+      }
+    },
+    {
+      "id": 57,
+      "titulo": "Comedia del Mal práctico",
+      "autor": "ANÓNIMA",
+      "fecha": "ca. 1530-1539",
+      "detalles": {
+        "lugar_probable": "Sevilla",
+        "referencias": [
+          "E. COTARELO (CATÁLOGO, nº 45, pág. 13)",
+          "Regestrum (nº 7473)"
+        ]
+      }
+    },
+    {
+      "id": 58,
+      "titulo": "Farsa de Navidad y de los Inocentes",
+      "autor": "ANÓNIMA",
+      "fecha": "ca. 1530-1539",
+      "detalles": {
+        "versos_iniciales": "Sin duda mucho han tardado / los tres Reyes en",
+        "referencias": [
+          "E. COTARELO (CATÁLOGO, nº 48, pág. 13)",
+          "Regestrum (nº 15133)"
+        ]
+      }
+    },
+    {
+      "id": 59,
+      "titulo": "Comedia de la noche de Navidad, en coplas",
+      "autor": "ANÓNIMA",
+      "fecha": "ca. 1530-1539",
+      "detalles": {
+        "versos_iniciales": "Dios mantenga, Dios mantenga, / pastores de esta majada",
+        "referencias": [
+          "E. COTARELO (CATÁLOGO, nº 49, pág. 14)",
+          "Regestrum (nº 12582)"
+        ]
+      }
+    },
+    {
+      "id": 60,
+      "titulo": "Comedia Pupilaria",
+      "autor": "ANÓNIMA",
+      "fecha": "ca. 1530-1539",
+      "detalles": {
+        "formato": "cinco jornadas, en coplas",
+        "tema": "materia estudiantil",
+        "referencias": [
+          "E. Cotarelo (CATÁLOGO, nº 57, pág. 15)",
+          "Regestrum (nº 15168)",
+          "M.ª Isabel HERNÁNDEZ GONZÁLEZ [en prensa]"
+        ]
+      }
+    }
+  ]
+}

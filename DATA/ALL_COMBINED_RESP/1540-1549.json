@@ -1,0 +1,93 @@
+{
+  "periodo": "1540-1549",
+  "obras": [
+    {
+      "id": 1,
+      "titulo": "Coloquio de Fenisa",
+      "autor": "ANÓNIMO",
+      "fecha": "1540",
+      "detalles": {
+        "lugar": "Sevilla",
+        "otras_ediciones": [
+          {
+            "año": "1588",
+            "lugar": "Valladolid",
+            "impresor": "herederos de Bernardino de Santo Domingo"
+          }
+        ],
+        "personajes": [
+          "Valerio",
+          "Marsirio", 
+          "Silvio",
+          "Bono",
+          "Fenisa"
+        ],
+        "referencias": [
+          "MORATÍN (Obras, BAE, t. II, nº 61, pág. 193)",
+          "DE LA BARRERA, 535",
+          "Cricón (nº VII, Madrid, 1859, 29-46)"
+        ]
+      }
+    },
+    {
+      "id": 2,
+      "titulo": "Égloga entre Torino, Guillardo y Quiral, pastores, y Benita e Iliana, pastoras",
+      "autor": "ANÓNIMA",
+      "fecha": "1540",
+      "detalles": {
+        "lugar": "Alcalá",
+        "impresor": "Juan de Brocar",
+        "referencia": "RIEPI (nº 1918, pág. 134)"
+      }
+    },
+    {
+      "id": 4,
+      "titulo": "Tragedia llamada Josephina",
+      "autor": "MICHAEL DE CARVAJAL",
+      "fecha": "1540",
+      "detalles": {
+        "lugar": "Palencia",
+        "impresor": "Diego Fernández de Córdoba",
+        "formato": "4º, 46 hs",
+        "encargo": "Juan de Espinosa, mercader de libros de Medina del Campo",
+        "referencias": [
+          "A. MOREL-FATIO (Romania, XV, 1886)",
+          "Joseph E. GILLET [1932: XXIV-XXVI]"
+        ]
+      }
+    },
+    {
+      "id": 5,
+      "titulo": "Propalladia",
+      "autor": "BARTOLOME DE TORRES NAHARRO",
+      "fecha": "ca. 1544-1549",
+      "detalles": {
+        "lugar": "Anvers",
+        "impresor": "Martín Nuncio",
+        "formato": "12º",
+        "referencias": [
+          "GILLET (PROPALLADIA, t. I, 47-54)",
+          "A. RODRÍGUEZ-MOÑINO (RFE, XXIV, 1937)"
+        ]
+      }
+    },
+    {
+      "id": 22,
+      "titulo": "Cancionero espiritual",
+      "autor": "ANÓNIMO",
+      "fecha": "1549",
+      "detalles": {
+        "lugar": "Valladolid",
+        "impresor": "Juan de Villaquirán",
+        "formato": "in-fol. de 56 hs",
+        "contenido": "paso del Nacimiento con personajes: Bras, Mingo, Llorente, Frutos, Gil, la Virgen",
+        "autor_descripcion": "un religioso de la orden del bienaventurado San Hieronimo",
+        "referencias": [
+          "MARIANO ALCOCER Y MARTÍN [1926: nº 145, pág. 85]",
+          "P. SALVÁ (BIBLIOTECA, nº 272, pág. 129)",
+          "B. WARDROPPER, Cancionero Espiritual (Valladolid, 1549)"
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+    "periodo": "1520-1529",
+    "obras": [
+      {
+        "id": 1,
+        "titulo": "Propalladia - Comedia Calamita",
+        "autor": "Bartolomé de Torres Naharro",
+        "fecha": "1520",
+        "detalles": {
+          "imprenta": "Cromberger",
+          "lugar": "Sevilla",
+          "precio": "75 maravedíes",
+          "lugar_compra": "Valladolid (1524)",
+          "referencias": [
+            "Nicolás Antonio [1783-1788, t. 1, 202]",
+            "B. J. Galard, Ensayo, t. II, nº 1870",
+            "J. E. Gillet, Propalladia, t. 1, 18-19",
+            "F. J. Norton, Catalogue, nº 930"
+          ]
+        }
+      },
+      {
+        "id": 2,
+        "titulo": "Égloga entre Torino, Guillardo y Quiral, pastores, y Benita e Iliana, pastoras",
+        "autor": "ANÓNIMA",
+        "fecha": "ca. 1520",
+        "detalles": {
+          "lugar": "Toledo",
+          "ubicacion": "Biblioteca Nacional de Viena",
+          "incluida_en": "Question d'Amor",
+          "referencias": [
+            "RIEPI (nº 1916, 134)",
+            "B. J. Gallardo, Ensayo, t. I, nº 1064"
+          ]
+        }
+      },
+      {
+        "id": 3,
+        "titulo": "Tres Pasos de la Pasión y una Égloga de la Resurrección",
+        "autor": "ANÓNIMO",
+        "fecha": "1520",
+        "detalles": {
+          "imprenta": "casa de Alonso de Melgar",
+          "lugar": "Burgos",
+          "fecha_impresion": "abril de 1520",
+          "ubicacion": "Biblioteca Menéndez Pelayo de Santander",
+          "formato": "signatura āii hasta āvi",
+          "referencias": [
+            "E. Cotarelo [1902: 251-272]",
+            "Adolfo Bonilla y San Martín [1921:140]",
+            "J. Gillet [1932: 949-980]"
+          ]
+        }
+      },
+      {
+        "id": 4,
+        "titulo": "Égloga nueva",
+        "autor": "ANÓNIMA",
+        "fecha": "ca. 1520",
+        "detalles": {
+          "formato": "4º de 6 hs",
+          "personajes": [
+            "Una pastora",
+            "un santero",
+            "un melchorejo",
+            "un fraile",
+            "dos pastores"
+          ],
+          "ubicacion": "Bayerische Staatsbibliothek de Munich",
+          "editor": "E. Köhler",
+          "referencias": ["F. Wolff [1853: 525]"]
+        }
+      },
+      {
+        "id": 5,
+        "titulo": "Farsa duna pastora y un hermitaño",
+        "autor": "ANÓNIMO",
+        "fecha": "ca. 1520",
+        "detalles": {
+          "referencia": "M. Cañete en su edición de las obras de Lucas Fernández [1867: LXI]"
+        }
+      },
+      {
+        "id": 6,
+        "titulo": "Égloga de la fundación de la Orden de la Trinidad",
+        "autor": "Alfonso de Castrillo",
+        "fecha": "ca. 1520",
+        "detalles": {
+          "incipit": "Muy reverendo Padre, todo género de veniales",
+          "referencias": [
+            "F.J. Norton, Catalogue, nº 1396, pág. 488",
+            "Abecedarium colombiano (n° 12358)"
+          ]
+        }
+      },
+      {
+        "id": 7,
+        "titulo": "Égloga interlocutoria",
+        "autor": "ANÓNIMA",
+        "fecha": "ca. 1520",
+        "detalles": {
+          "personajes": [
+            "Pascual",
+            "Benito",
+            "Gilverto",
+            "Pascuala"
+          ],
+          "formato": "4°, 4 hs",
+          "ubicacion": "Biblioteca Nacional de París (Sign. Vg. 88)",
+          "referencia": "NORTON (CATALOGUE, n° 945, pág. 344)"
+        }
+      },
+      {
+        "id": 8,
+        "titulo": "Triaca del alma",
+        "autor": "Marcelo de Lebrija",
+        "fecha": "ca. 1520-1530",
+        "detalles": {
+          "formato": "folio, 64 hs",
+          "ubicacion": "Biblioteca Nacional de Madrid, R-12634",
+          "dedicatoria": "a los muy illustres señores don Fernando de Toledo y doña María Enríquez"
+        }
+      },
+      {
+        "id": 9,
+        "titulo": "Farsa sacramental",
+        "autor": "HERNÁN LÓPEZ DE YANGUAS",
+        "fecha": "ca. 1521",
+        "detalles": {
+          "ubicacion": "Biblioteca Menéndez Pelayo",
+          "referencias": [
+            "E. COTARELO Y MORI [1902: 251-272]",
+            "F. J. NORTON, CATALOGUE, nº 333, pág. 120"
+          ]
+        }
+      },
+      {
+        "id": 10,
+        "titulo": "Farsa compuesta para se representar el día del Corpus Christi",
+        "autor": "ANÓNIMA",
+        "fecha": "1521",
+        "detalles": {
+          "formato": "manuscrito, 15 ff. en 4º",
+          "personajes": ["tres pastores", "Fe"],
+          "editor": "M. SERRANO Y SANZ",
+          "publicacion": "Revista de Archivos, Bibliotecas y Museos, X (1904)"
+        }
+      }
+    ]
+  }

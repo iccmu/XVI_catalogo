@@ -1,0 +1,152 @@
+{
+    "periodo": "1500-1509",
+    "obras": [
+      {
+        "id": 1,
+        "titulo": "Cancionero de las obras de Juan del Enzina",
+        "autor": "JUAN DEL ENZINA",
+        "fecha": "1501",
+        "detalles": {
+          "imprenta": "Juan Pegnicer y Magno Herbst",
+          "lugar": "Sevilla",
+          "formato": "folio, 110 hs",
+          "contenido": "contiene las mismas ocho églogas de la primera edición de Salamanca",
+          "referencia": "F. J. NORTON, CATALOGUE, nº 717, págs. 269-270"
+        }
+      },
+      {
+        "id": 2,
+        "titulo": "Égloga interlocutoria graciosa y por gentil estilo",
+        "autor": "DIEGO DE ÁVILA",
+        "fecha": "ca. 1502-1504",
+        "detalles": {
+          "imprenta": "casa de Stanislao Polono",
+          "lugar": "Alcalá de Henares",
+          "formato": "4º, 18 hs",
+          "dedicatoria": "dirigida al muy illustrissimo gran capitán",
+          "precio": "8 maravedís (1516)",
+          "referencias": [
+            "F. J. NORTON, CATALOGUE, nº 8",
+            "B. DUTTON (1991: 98)"
+          ]
+        }
+      },
+      {
+        "id": 3,
+        "titulo": "La obra del Bachiller de la Pradilla en coplas latinas y españolas",
+        "autor": "EL BACHILLER DE LA PRADILLA",
+        "fecha": "ca. 1502",
+        "detalles": {
+          "tema": "de la venida del rey don Felipe y doña Juana",
+          "formato": "4°",
+          "precio": "5 maravedís en Toledo (1511)",
+          "incipit_latin": "Plaudite jam populi",
+          "incipit_español": "Aunque en loor de tan preponteros"
+        }
+      },
+      {
+        "id": 4,
+        "titulo": "Cancionero de todas las obras de Juan del Enzina: con otras añadidas",
+        "autor": "JUAN DEL ENZINA",
+        "fecha": "1505",
+        "detalles": {
+          "imprenta": "casa de Andrés de Burgos",
+          "lugar": "Burgos",
+          "formato": "folio, 102 hs",
+          "mercaderes": ["Francisco Ada", "Juan Tomás Avarión"]
+        }
+      },
+      {
+        "id": 5,
+        "titulo": "Cancionero de todas las obras de Juan del Enzina con otras cosas nuevamente añadidas",
+        "autor": "JUAN DEL ENZINA",
+        "fecha": "1507",
+        "detalles": {
+          "imprenta": "Hans Gyssser",
+          "lugar": "Salamanca",
+          "formato": "folio, 98 hs",
+          "subobras": [
+            {
+              "id": "5.1",
+              "titulo": "Égloga trobada por Juan del Enzina, representada la noche de Navidad",
+              "personajes": ["Juan", "Miguelejo", "Rodriguacho", "Antón"]
+            },
+            {
+              "id": "5.2",
+              "titulo": "Representación ante el muy esclarecido y muy illustre Príncipe don Juan",
+              "personajes": ["Bras", "Juanillo", "Escudero", "Pelayo"]
+            }
+          ]
+        }
+      },
+      {
+        "id": 6,
+        "titulo": "Comedia o farsa",
+        "autor": "PEDRO DE LERMA",
+        "fecha": "1508",
+        "detalles": {
+          "lugar": "Alcalá",
+          "tema": "basada en el personaje del cardenal Jiménez de Cisneros"
+        }
+      },
+      {
+        "id": 7,
+        "titulo": "Cancionero de todas las obras de Juan del Encina con las coplas de Zambardo",
+        "autor": "JUAN DEL ENZINA",
+        "fecha": "1509",
+        "detalles": {
+          "imprenta": "Hans Gyssler",
+          "lugar": "Salamanca",
+          "formato": "folio, 104 hs",
+          "subobras": [
+            {
+              "id": "7.1",
+              "titulo": "Égloga trobada representada en la noche de Navidad",
+              "personajes": ["Juan", "Miguellejo", "Rodrigo", "Antón"]
+            },
+            {
+              "id": "7.2",
+              "titulo": "Auto del repelón",
+              "personajes": ["Pierniçurto", "Johamparamás"]
+            },
+            {
+              "id": "7.3",
+              "titulo": "Égloga de Fileno, Zambardo y Cardonio",
+              "personajes": ["Fileno", "Zambardo", "Cardonio"]
+            }
+          ]
+        }
+      },
+      {
+        "id": 8,
+        "titulo": "Égloga trobada por Juan del Enzina (Fileno, Zambardo y Cardonio)",
+        "autor": "JUAN DEL ENZINA",
+        "fecha": "ca. 1509",
+        "detalles": {
+          "formato": "Pliego suelto",
+          "ubicacion": "Bibliothéque Nationale de París"
+        }
+      },
+      {
+        "id": 9,
+        "titulo": "Égloga nuevamentre trobada por Juan del Enzina",
+        "autor": "JUAN DEL ENZINA",
+        "fecha": "post 1509",
+        "detalles": {
+          "personajes": ["Cristino", "Justino", "Febea", "Amor"],
+          "formato": "pliego suelto, folio, 2 hs",
+          "ubicacion": "Biblioteca Menéndez Pelayo"
+        }
+      },
+      {
+        "id": 10,
+        "titulo": "Égloga trobada por Juan del Enzina (Fileno, Zambardo y Cardonio)",
+        "autor": "JUAN DEL ENZINA",
+        "fecha": "post 1509",
+        "detalles": {
+          "formato": "pliego suelto, 4º, 4 hs",
+          "ubicacion": "Biblioteca Nacional de Madrid"
+        }
+      }
+    ]
+  }

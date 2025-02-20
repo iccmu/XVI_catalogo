@@ -1,0 +1,141 @@
+{
+    "periodo": "1560-1569",
+    "obras": [
+      {
+        "id": 1,
+        "titulo": "Farsa del rey David",
+        "autor": "DIEGO SÁNCHEZ DE BADAJOZ",
+        "fecha": "ca. 1560",
+        "personajes": [
+          "Un pastor",
+          "El rey David, como pastor",
+          "El rey Saúl",
+          "Su hermano Jonatás",
+          "El gigante Golías, armado"
+        ],
+        "detalles": {
+          "formato": "Suelta, 4 hojas",
+          "imprenta": "Felipe de Junta",
+          "lugar": "Burgos"
+        }
+      },
+      {
+        "id": 2,
+        "titulo": "Farsa del sordo",
+        "autor": "ANÓNIMA",
+        "fecha": "ca. 1560",
+        "personajes": [
+          "Un Pastor",
+          "una moça",
+          "Bartholomé, loco",
+          "un ermitario",
+          "un galán",
+          "un page",
+          "un viejo sordo",
+          "un bobo"
+        ],
+        "detalles": {
+          "imprenta": "Bernardino de Santo Domingo",
+          "lugar": "Valladolid",
+          "formato": "4°, 8 hojas"
+        }
+      },
+      {
+        "id": 3,
+        "titulo": "Obra del pecador",
+        "autor": "BARTOLOME APARICIO",
+        "fecha": "ca. 1560",
+        "personajes": [
+          "El Pecador",
+          "La Justicia",
+          "La misericordia",
+          "El Consuelo",
+          "La Esperanza",
+          "La Maria",
+          "Josef",
+          "Mateo, pastor",
+          "Clemente, pastor",
+          "Pascual, pastor",
+          "Un ángel",
+          "Rodrigo, bobo",
+          "Martín, bobo",
+          "El autor de la obra"
+        ],
+        "detalles": {
+          "formato": "4º, 12 hojas",
+          "lugar": "Burgos",
+          "imprenta": "taller de los Junta"
+        }
+      },
+      {
+        "id": 13,
+        "titulo": "Turiana",
+        "autor": "JUAN TIMONEDA",
+        "fecha": "1564-1565",
+        "subobras": [
+          {
+            "id": "13.1",
+            "titulo": "Entremés de un ciego, un mozo y un pobre",
+            "personajes": ["Ciego", "Mozo", "Pobre"]
+          },
+          {
+            "id": "13.2",
+            "titulo": "Paso de dos clérigos, cura y beneficiado, y dos mozos suyos simples",
+            "personajes": [
+              "Cura, clérigo",
+              "Beneficiado, clérigo",
+              "Ioan, simple, su moço",
+              "Antón, simple, su moço"
+            ]
+          },
+          {
+            "id": "13.6",
+            "titulo": "Tragicomedia llamada Filomena",
+            "personajes": [
+              "Tereo, rey",
+              "Progne, reina, su mujer",
+              "Maestresala",
+              "Mayordomo",
+              "Camarero",
+              "Taurino, simple",
+              "Panadión, rey",
+              "Filomena, su hija",
+              "Sorato, pastor",
+              "Silvestro, pastor"
+            ]
+          }
+        ]
+      },
+      {
+        "id": 26,
+        "titulo": "Obra llamada María",
+        "autor": "JOAN TIMONEDA",
+        "fecha": "1568",
+        "personajes": [
+          "Benivolenza, doncella",
+          "Padre Adán",
+          "Hieremías propheta",
+          "Plazer, pastor abovado",
+          "Linaje Humano",
+          "La Madre de Dios"
+        ],
+        "detalles": {
+          "formato": "8º, 32 hojas",
+          "imprenta": "Navarro",
+          "lugar": "Valencia"
+        }
+      },
+      {
+        "id": 28,
+        "titulo": "Victoria Christi",
+        "autor": "BARTOLOMÉ PALAU",
+        "fecha": "ca. 1568",
+        "detalles": {
+          "imprenta": "Miguel de Guesa",
+          "lugar": "Zaragoza",
+          "licencia": "Don Hernando de Aragón, Arzobispo de Zaragoza",
+          "tema": "alegoría de la captividad espiritual del linaje humano"
+        }
+      }
+    ]
+  }

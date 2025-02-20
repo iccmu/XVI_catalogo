@@ -1,0 +1,174 @@
+{
+    "periodo": "1510-1519",
+    "obras": [
+      {
+        "id": 1,
+        "titulo": "Farsa del Nacimiento",
+        "autor": "DIEGO (¿?) O MARTÍN (¿?)DE HERRERA",
+        "fecha": "1510",
+        "detalles": {
+          "verso_inicial": "¡Oh Dios que heciste los rudos pastores ...!",
+          "referencia": "M. CAÑETE en su compilación de obras desconocidas escritas hasta 1540 [1867: LXI]"
+        }
+      },
+      {
+        "id": 2,
+        "titulo": "Este auto es el que se haze el día de la Assumpçión de Nuestra Señora en la tarde",
+        "autor": "ANÓNIMO",
+        "fecha": "ca. 1510",
+        "detalles": {
+          "ubicacion": "Biblioteca Nacional de Madrid (Ms. 9661)",
+          "editor": "Ronald E. SURTZ",
+          "publicacion": "El libro del Conorte, Barcelona, Puvill, 1982, 29-37",
+          "nota": "materia tomada del Libro del Conorte de Sor Juana de la Cruz"
+        }
+      },
+      {
+        "id": 3,
+        "titulo": "Égloga interlocutoria",
+        "autor": "DIEGO DE ÁVILA",
+        "fecha": "ca. 1511",
+        "detalles": {
+          "precio": "8 maravedís",
+          "lugar_compra": "Alcalá de Henares",
+          "formato": "4º",
+          "incipit": "No puede ser mayor maldición",
+          "referencias": [
+            "RIEPI, n° 3060, pág. 205",
+            "F. J. NORTON, CATALOGUE, n° 1348, pág. 485"
+          ]
+        }
+      },
+      {
+        "id": 4,
+        "titulo": "Égloga hecha por Salazar de Breno y otros tres pastores compañeros suyos",
+        "autor": "SALAZAR DE BRENO",
+        "fecha": "ca. 1511",
+        "detalles": {
+          "formato": "4º, s. l., s. i., s. a., 8 h.s.",
+          "personajes": ["Breno", "Briseno", "Talante", "Carmeno"],
+          "dedicatoria": "Dirigida al muy Ilustre y magnífico señor el Duque de Medina Crli",
+          "versos_iniciales": "Gentes, aves, animales, sierras, bosques...",
+          "editor": "H. C. HEATON"
+        }
+      },
+      {
+        "id": 5,
+        "titulo": "Égloga de tres pastores",
+        "autor": "JUAN DEL ENZINA",
+        "fecha": "ca. 1511",
+        "detalles": {
+          "precio": "6 mrs",
+          "lugar_compra": "Alcalá de Henares",
+          "ubicacion": "Bibliothéque Nationale de París",
+          "referencia": "F. J. NORTON, CATALOGUE, nº 1347, pág. 483"
+        }
+      },
+      {
+        "id": 6,
+        "titulo": "Égloga entre Torino, Guillardo y Quiral",
+        "autor": "ANÓNIMA",
+        "fecha": "ca. 1512",
+        "detalles": {
+          "personajes": [
+            "Torino",
+            "Guillardo",
+            "Quiral",
+            "Benita",
+            "Iliana"
+          ],
+          "incluida_en": "Cuestión de Amor de dos enamorados"
+        }
+      },
+      {
+        "id": 7,
+        "titulo": "Cancionero de las obras de Juan del Enzina",
+        "autor": "JUAN DEL ENZINA",
+        "fecha": "1512",
+        "detalles": {
+          "lugar": "Zaragoza",
+          "imprenta": "casa de Juan de Coci",
+          "estado": "perdido",
+          "referencia": "Gregorio MAYANS Y SISCAR"
+        }
+      },
+      {
+        "id": 8,
+        "titulo": "Cancionero de todas las obras de don Pedro Manuel de Urrea",
+        "autor": "PEDRO MANUEL XIMÉNEZ DE URREA",
+        "fecha": "1513",
+        "subobras": [
+          {
+            "id": "8.1",
+            "titulo": "Égloga de la Tragicomedia de Calisto y Melibea",
+            "detalles": {
+              "dedicatoria": "dirigida a la condesa de Aranda, su madre",
+              "personajes": ["Melibea", "Calisto", "Sempronio"]
+            }
+          }
+        ]
+      },
+      {
+        "id": 9,
+        "titulo": "Introducción de la égloga",
+        "autor": "ANÓNIMA",
+        "fecha": "1531",
+        "detalles": {
+          "personajes": [
+            "Flamiano/Torino",
+            "Guillardto",
+            "Quirual/marqués de Carlinier",
+            "Benita/Belisena",
+            "Yllana/Ysiana"
+          ],
+          "impresor": "Diego de Gumiel",
+          "lugar": "Valencia",
+          "formato": "folio, 40 hs"
+        }
+      },
+      {
+        "id": 10,
+        "titulo": "Égloga de unos pastores",
+        "autor": "MARTÍN de Herrera",
+        "fecha": "ca. 1513",
+        "detalles": {
+          "personajes": ["Bras", "Turibio", "Gorgorio"],
+          "formato": "40 páginas en folio",
+          "tema": "victoria de Orán, conquistada en 1509"
+        }
+      },
+      {
+        "id": 11,
+        "titulo": "Égloga trobada por Juan del Enzina",
+        "autor": "JUAN DEL ENZINA",
+        "fecha": "ca. 1513-1520",
+        "detalles": {
+          "personajes": ["Pelayo", "Bras", "Huanillo", "Escudero"],
+          "tema": "sobre el Amor",
+          "imprenta": "Juan de Villaguirán",
+          "lugar": "Toledo",
+          "formato": "4º, 4 hs"
+        }
+      },
+      {
+        "id": 12,
+        "titulo": "Égloga de los enamorados Plácida y Victoriano",
+        "autor": "JUAN DEL ENZINA",
+        "fecha": "ca. 1513",
+        "detalles": {
+          "personajes": [
+            "Plácida",
+            "Victoriano",
+            "Sulpicio",
+            "Fulgencia",
+            "Eritrea",
+            "Pascual",
+            "Gil",
+            "Venus",
+            "Mercurio"
+          ],
+          "ubicacion": "biblioteca parisina"
+        }
+      }
+    ]
+  }
