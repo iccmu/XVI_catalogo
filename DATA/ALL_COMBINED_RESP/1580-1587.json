@@ -2,7 +2,7 @@
   "periodo": "1580-1587",
   "obras": [
     {
-      "id": 1,
+      "id": "1580_1",
       "titulo": "Égloga entre Torino, Guillardo y Quiral, pastores, y Benita e Iliana, pastoras",
       "autor": "ANÓNIMA",
       "fecha": "1580",
@@ -20,7 +20,7 @@
       }
     },
     {
-      "id": 2,
+      "id": "1580_2",
       "autor": "JOAQUÍN ROMERO DE CEPEDA",
       "fecha": "1582",
       "detalles": {
@@ -40,22 +40,22 @@
       },
       "subobras": [
         {
-          "id": "2.1",
+          "id": "1580_2.1",
           "titulo": "Comedia Metamorfosea"
         },
         {
-          "id": "2.2",
+          "id": "1580_2.2",
           "titulo": "Comedia Salvaje",
           "subtitulo": "en la cual por muy delicado estilo y artificio se descubre lo que de las aluchuetas a las honestas doncellas se les sigue"
         }
       ]
     },
     {
-      "id": 3,
+      "id": "1580_3",
       "autor": "BARTOLOMÉ CAIRASCO DE FIGUEROA",
       "subobras": [
         {
-          "id": "3.1",
+          "id": "1580_3.1",
           "titulo": "Tragedia y martirio de Santa Catherina de Alexandria",
           "personajes": [
             "El que dice el argumento",
@@ -84,7 +84,7 @@
           ]
         },
         {
-          "id": "3.2",
+          "id": "1580_3.2",
           "titulo": "Comedia del Recibimiento que se le hizo al reverendissimo señor don Fernando de Rueda",
           "fecha": "1582",
           "personajes": [
@@ -97,7 +97,7 @@
           ]
         },
         {
-          "id": "3.3",
+          "id": "1580_3.3",
           "titulo": "Comedia del Alma para el día del Corpus Christi",
           "personajes": [
             "Inspiración divina",
@@ -126,11 +126,136 @@
           ]
         },
         {
-          "id": "3.4",
+          "id": "1580_3.4",
           "titulo": "Tragedia de Sancta Susana para el día del Corpus",
           "fecha": "1582"
         }
       ]
+    },
+    {
+      "id": "1580_4",
+      "titulo": "Auto llamado Luzero de nuestra Salvación",
+      "autor": "AUSÍAS IZQUIERDO",
+      "fecha": "ca. 1582",
+      "detalles": {
+        "subtitulo": "que trata el despedimiento que hizo nuestro Señor Iesu Christo de su bendita madre",
+        "profesion_autor": "librero",
+        "censor": "Fray Hieronimo Ferrer",
+        "ediciones": [
+          {
+            "lugar": "Sevilla",
+            "impresor": "Fernando Maldonado",
+            "año": "1582"
+          }
+        ]
+      }
+    },
+    {
+      "id": "1580_5",
+      "autor": "JUAN TIMONEDA",
+      "subobras": [
+        {
+          "id": "1580_5.1",
+          "titulo": "Marquesa"
+        },
+        {
+          "id": "1580_5.2",
+          "titulo": "Noguera"
+        },
+        {
+          "id": "1580_5.3",
+          "titulo": "Cayados"
+        }
+      ],
+      "detalles": {
+        "notas": "Obras conocidas solo por el inventario de la librería de Timoneda a su muerte"
+      }
+    },
+    {
+      "id": "1580_6",
+      "titulo": "Comedia Florianeta",
+      "detalles": {
+        "formato": "cinco pliegos",
+        "ejemplares": "50"
+      }
+    },
+    {
+      "id": "1580_7",
+      "titulo": "Victoria de Christo",
+      "autor": "BARTOLOMÉ PALAU",
+      "fecha": "1583",
+      "detalles": {
+        "subtitulo": "Alegórica representación de la captividad espiritual y de la Redención de Christo",
+        "lugar": "Valencia",
+        "impresor": "Johannes Navarrum",
+        "formato": "8º"
+      }
+    },
+    {
+      "id": "1580_8",
+      "titulo": "Los colloquios satíricos",
+      "autor": "ANTONIO DE TORQUEMADA",
+      "fecha": "1583",
+      "detalles": {
+        "lugar": "Bilbao",
+        "impresor": "Mathías Mares",
+        "subobra": "Colloquio pastoril, en que se tratan los amores de un pastor llamado Torcato con una pastora llamada Belisarda",
+        "personajes": ["Torcato", "Belisarda", "Filonio", "Grisaldo"]
+      }
+    },
+    {
+      "id": "1580_9",
+      "autor": "JUAN LÓPEZ DE ÚBEDA",
+      "fecha": "1585",
+      "detalles": {
+        "obra_contenedora": "Cancionero general de la doctrina Cristiana",
+        "lugar": "Alcalá de Henares",
+        "impresor": "Juan Íñiguez de Lequerica"
+      },
+      "subobras": [
+        {
+          "id": "1580_9.1",
+          "titulo": "Comedia de San Alexo"
+        },
+        {
+          "id": "1580_9.2",
+          "titulo": "Comedia de virtudes contra los vicios"
+        },
+        {
+          "id": "1580_9.3",
+          "titulo": "Auto de la Esposa en los Cantares"
+        }
+      ]
+    },
+    {
+      "id": "1580_10",
+      "titulo": "Auto del Nascimiento de Nuestro Señor Iesu Christo",
+      "autor": "PEDRO ÁLVAREZ DE ACEVEDO",
+      "fecha": "ca. 1580",
+      "detalles": {
+        "profesion": "clérigo y bachiller por Salamanca",
+        "lugar_nacimiento": "Castropod"
+      }
+    },
+    {
+      "id": "1580_11",
+      "titulo": "Obra del peccador",
+      "autor": "BARTOLOMÉ APARICIO",
+      "fecha": "ca. 1586",
+      "detalles": {
+        "subtitulo": "Obra del santísimo Nacimiento de Nuestro Señor Jesu Christo, llamada del Peccador",
+        "ediciones": [
+          {
+            "lugar": "Sevilla",
+            "año": "1586",
+            "notas": "50 ejemplares embarcados para las Indias"
+          },
+          {
+            "lugar": "Sevilla",
+            "año": "1611"
+          }
+        ]
+      }
     }
   ]
 }
