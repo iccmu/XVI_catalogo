@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nuevo catálogo del teatro español del siglo XVI</title>
+    <style>
+        :root {
+            --primary-color: #c41e3a;
+            --secondary-color: #2c3e50;
+            --background-color: #f8f9fa;
+            --card-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+            --detail-color: #3498db;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: var(--background-color);
+            color: var(--secondary-color);
+            line-height: 1.6;
+        }
+
+        h1 {
+            color: var(--primary-color);
+            text-align: center;
+            margin: 2rem 0;
+            font-size: 2.5em;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        .logo-container {
+            text-align: left;
+            margin-bottom: 1rem;
+            padding: 0.8rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .logo-container img {
+            max-width: 15%;
+            height: auto;
+        }
+
+        .logo-container h1 {
+            margin: 0;
+            flex: 1;
+            font-size: 1.8rem;
+        }
+
+        .search-container {
+            background: white;
+            padding: 1rem;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+            margin-bottom: 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .search-container input {
+            padding: 0.6rem 1rem;
+            border: 2px solid #e1e1e1;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            flex: 1;
+            min-width: 180px;
+        }
+
+        .search-container input:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.1);
+        }
+
+        .search-container button {
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+
+        .search-container button:hover {
+            background-color: #a01830;
+            transform: translateY(-1px);
+        }
+
+        .periodos-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            margin-bottom: 2rem;
+            justify-content: center;
+            padding: 1rem;
+        }
+
+        .periodo-btn {
+            padding: 0.6rem 1.2rem;
+            border: none;
+            border-radius: 8px;
+            background-color: white;
+            color: var(--primary-color);
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition);
+            box-shadow: var(--card-shadow);
+        }
+
+        .periodo-btn:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .periodo-btn.contains-results {
+            background-color: var(--detail-color);
+            color: white;
+        }
+
+        .periodo-btn .contador {
+            background-color: var(--detail-color);
+            color: white;
+            padding: 0.2rem 0.5rem;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            margin-left: 0.5rem;
+        }
+
+        .periodo-btn:hover .contador {
+            background-color: white;
+            color: var(--detail-color);
+        }
+
+        .periodo-btn.contains-results .contador {
+            background-color: white;
+            color: var(--detail-color);
+        }
+
+        .obra {
+            background-color: white;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 12px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+        }
+
+        .obra:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .obra h3 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+        }
+
+        .subobra {
+            margin: 1rem 0;
+            padding: 1.2rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .subobra h4 {
+            color: var(--primary-color);
+            margin-top: 0;
+            font-size: 1.1rem;
+        }
+
+        .detalle-card {
+            background-color: #ebf5fb;
+            border-left: 4px solid var(--detail-color);
+            padding: 1rem;
+            margin: 0.5rem 0;
+            border-radius: 8px;
+            box-shadow: var(--card-shadow);
+        }
+
+        .detalle-card h4 {
+            color: var(--detail-color);
+            margin: 0 0 0.5rem 0;
+            font-size: 1rem;
+        }
+
+        .detalle-item {
+            background-color: white;
+            padding: 0.5rem;
+            margin: 0.3rem 0;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .logo-container {
+                padding: 0.6rem;
+            }
+
+            .logo-container img {
+                max-width: 30%;
+            }
+
+            .logo-container h1 {
+                font-size: 1.5rem;
+            }
+
+            .search-container {
+                padding: 1rem;
+            }
+
+            .obra {
+                padding: 1rem;
+            }
+        }
+
+        .periodo-section {
+            margin-bottom: 3rem;
+        }
+
+        .periodo-title {
+            color: var(--detail-color);
+            padding: 1rem;
+            margin: 2rem 0 1rem 0;
+            border-bottom: 2px solid var(--detail-color);
+            font-size: 1.8rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="logo-container">
+        <img src="../teaxvi.svg" alt="Teatro Histórico Español">
+        <h1>Nuevo catálogo del teatro español del siglo XVI</h1>
+    </div>
+    
+    <div class="search-container">
+        <input type="text" id="titulo" placeholder="Buscar por título">
+        <input type="text" id="autor" placeholder="Buscar por autor">
+        <input type="text" id="fecha" placeholder="Buscar por fecha">
+        <button onclick="buscarObras()">Buscar</button>
+    </div>
+
+    <div id="periodos" class="periodos-list"></div>
+    <div id="resultados"></div>
+
+    <script>
+        const BASE_URL = 'https://raw.githubusercontent.com/iccmu/XVI_catalogo/main/DATA/ALL_COMBINED_RESP';
+        
+        const PERIODOS = [
+            '1486-1499', '1500-1509', '1510-1519', '1520-1529',
+            '1530-1539_a', '1540-1549', '1550-1559',
+            '1560-1569', '1570-1579', '1580-1587'
+        ];
+
+        let todasLasObras = [];
+
+        // Cargar los períodos y datos cuando la página se carga
+        window.onload = async function() {
+            cargarPeriodos();
+            await cargarTodasLasObras();
+            
+            // Agregar event listeners para búsqueda en tiempo real
+            document.getElementById('titulo').addEventListener('input', debounce(buscarObras, 300));
+            document.getElementById('autor').addEventListener('input', debounce(buscarObras, 300));
+            document.getElementById('fecha').addEventListener('input', debounce(buscarObras, 300));
+
+            // Mostrar todas las obras ordenadas por época
+            mostrarObrasPorEpoca();
+        };
+
+        // Función debounce para evitar demasiadas búsquedas mientras se escribe
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        async function cargarTodasLasObras() {
+            try {
+                for (const periodo of PERIODOS) {
+                    const response = await fetch(`${BASE_URL}/${periodo}.json`);
+                    const data = await response.json();
+                    if (data.obras) {
+                        todasLasObras = todasLasObras.concat(data.obras);
+                    }
+                }
+            } catch (error) {
+                console.error('Error al cargar todas las obras:', error);
+            }
+        }
+
+        // Función para formatear el nombre del período
+        function formatearPeriodo(periodo) {
+            return periodo.replace('_a', '');
+        }
+
+        async function cargarPeriodos() {
+            const periodosDiv = document.getElementById('periodos');
+            let botonesHTML = [];
+            
+            for (const periodo of PERIODOS) {
+                try {
+                    const response = await fetch(`${BASE_URL}/${periodo}.json`);
+                    const data = await response.json();
+                    const cantidadObras = data.obras?.length || 0;
+                    
+                    botonesHTML.push(`
+                        <button class="periodo-btn" onclick="cargarPeriodo('${periodo}')">
+                            ${formatearPeriodo(periodo)}
+                            <span class="contador">${cantidadObras}</span>
+                        </button>
+                    `);
+                } catch (error) {
+                    console.error(`Error al cargar el conteo del período ${periodo}:`, error);
+                    botonesHTML.push(`
+                        <button class="periodo-btn" onclick="cargarPeriodo('${periodo}')">
+                            ${formatearPeriodo(periodo)}
+                            <span class="contador">0</span>
+                        </button>
+                    `);
+                }
+            }
+            
+            periodosDiv.innerHTML = botonesHTML.join('');
+        }
+
+        async function cargarPeriodo(periodo) {
+            // Obtener el botón del período actual
+            const botonPeriodo = document.querySelector(`.periodo-btn[onclick*="${periodo}"]`);
+            
+            // Si el período ya está seleccionado, deseleccionar y mostrar todas las obras
+            if (botonPeriodo?.classList.contains('contains-results')) {
+                document.querySelectorAll('.periodo-btn').forEach(btn => {
+                    btn.classList.remove('contains-results');
+                });
+                mostrarObrasPorEpoca();
+                return;
+            }
+
+            try {
+                const response = await fetch(`${BASE_URL}/${periodo}.json`);
+                const data = await response.json();
+                const obras = data.obras || [];
+                
+                // Mostrar resultados con el título del período
+                const resultadosDiv = document.getElementById('resultados');
+                resultadosDiv.innerHTML = `
+                    <div class="periodo-section">
+                        <h2 class="periodo-title">${formatearPeriodo(periodo)}</h2>
+                        ${obras.map(obra => `
+                            <div class="obra">
+                                <h3>${obra.titulo || 'Sin título'}</h3>
+                                <p><strong>Autor:</strong> ${obra.autor || 'Desconocido'}</p>
+                                <p><strong>Fecha:</strong> ${obra.fecha || 'No especificada'}</p>
+                                ${obra.personajes ? `
+                                    <p><strong>Personajes:</strong> ${obra.personajes.join(', ')}</p>
+                                ` : ''}
+                                ${obra.detalles ? `
+                                    <div class="detalle-card">
+                                        <h4>Detalles de la obra</h4>
+                                        ${Object.entries(obra.detalles).map(([key, value]) => `
+                                            <div class="detalle-item">
+                                                <strong>${formatKey(key)}:</strong> ${formatValue(value)}
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                ` : ''}
+                                ${obra.subobras ? `
+                                    <p><strong>Subobras:</strong></p>
+                                    ${obra.subobras.map(subobra => `
+                                        <div class="subobra">
+                                            <h4>${subobra.titulo || 'Sin título'}</h4>
+                                            ${subobra.personajes ? `
+                                                <p><strong>Personajes:</strong> ${subobra.personajes.join(', ')}</p>
+                                            ` : ''}
+                                        </div>
+                                    `).join('')}
+                                ` : ''}
+                            </div>
+                        `).join('')}
+                    </div>
+                `;
+                
+                // Resaltar solo el período seleccionado
+                document.querySelectorAll('.periodo-btn').forEach(btn => {
+                    btn.classList.remove('contains-results');
+                });
+                botonPeriodo?.classList.add('contains-results');
+            } catch (error) {
+                console.error('Error al cargar el período:', error);
+                document.getElementById('resultados').innerHTML = 
+                    '<p>Error al cargar los datos. Por favor, intente nuevamente.</p>';
+            }
+        }
+
+        // Función para normalizar texto (eliminar acentos y caracteres especiales)
+        function normalizarTexto(texto) {
+            return texto.toLowerCase()
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '');
+        }
+
+        async function buscarObras() {
+            const titulo = normalizarTexto(document.getElementById('titulo').value);
+            const autor = normalizarTexto(document.getElementById('autor').value);
+            const fecha = document.getElementById('fecha').value;
+
+            const resultados = todasLasObras.filter(obra => {
+                const tituloNormalizado = obra.titulo ? normalizarTexto(obra.titulo) : '';
+                const autorNormalizado = obra.autor ? normalizarTexto(obra.autor) : '';
+                
+                const coincideTitulo = !titulo || tituloNormalizado.includes(titulo);
+                const coincideAutor = !autor || autorNormalizado.includes(autor);
+                const coincideFecha = !fecha || obra.fecha?.includes(fecha);
+                
+                return coincideTitulo && coincideAutor && coincideFecha;
+            });
+
+            mostrarResultados(resultados);
+            resaltarPeriodos(resultados);
+        }
+
+        function mostrarResultados(obras) {
+            if (!Array.isArray(obras)) {
+                console.error('Los datos recibidos no son un array:', obras);
+                return;
+            }
+
+            const resultadosDiv = document.getElementById('resultados');
+            
+            // Ordenar obras por período y luego por ID
+            obras.sort((a, b) => {
+                const periodoA = a.id.split('_')[0];
+                const periodoB = b.id.split('_')[0];
+                if (periodoA !== periodoB) {
+                    return periodoA.localeCompare(periodoB);
+                }
+                return a.id.localeCompare(b.id);
+            });
+
+            if (obras.length === 0) {
+                resultadosDiv.innerHTML = `
+                    <div class="obra" style="text-align: center;">
+                        <h3>No se encontraron resultados</h3>
+                        <p>Intente con otros términos de búsqueda</p>
+                    </div>`;
+                return;
+            }
+
+            // Agrupar obras por período
+            const obrasPorPeriodo = obras.reduce((acc, obra) => {
+                const periodo = obra.id.split('_')[0];
+                if (!acc[periodo]) {
+                    acc[periodo] = [];
+                }
+                acc[periodo].push(obra);
+                return acc;
+            }, {});
+
+            // Generar HTML por período
+            resultadosDiv.innerHTML = Object.entries(obrasPorPeriodo)
+                .map(([periodo, obrasDelPeriodo]) => `
+                    <div class="periodo-section">
+                        <h2 class="periodo-title">${periodo}</h2>
+                        ${obrasDelPeriodo.map(obra => `
+                            <div class="obra">
+                                <h3>${obra.titulo || 'Sin título'}</h3>
+                                <p><strong>Autor:</strong> ${obra.autor || 'Desconocido'}</p>
+                                <p><strong>Fecha:</strong> ${obra.fecha || 'No especificada'}</p>
+                                ${obra.personajes ? `
+                                    <p><strong>Personajes:</strong> ${obra.personajes.join(', ')}</p>
+                                ` : ''}
+                                ${obra.detalles ? `
+                                    <div class="detalle-card">
+                                        <h4>Detalles de la obra</h4>
+                                        ${Object.entries(obra.detalles).map(([key, value]) => `
+                                            <div class="detalle-item">
+                                                <strong>${formatKey(key)}:</strong> ${formatValue(value)}
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                ` : ''}
+                                ${obra.subobras ? `
+                                    <p><strong>Subobras:</strong></p>
+                                    ${obra.subobras.map(subobra => `
+                                        <div class="subobra">
+                                            <h4>${subobra.titulo || 'Sin título'}</h4>
+                                            ${subobra.personajes ? `
+                                                <p><strong>Personajes:</strong> ${subobra.personajes.join(', ')}</p>
+                                            ` : ''}
+                                        </div>
+                                    `).join('')}
+                                ` : ''}
+                            </div>
+                        `).join('')}
+                    </div>
+                `).join('');
+        }
+
+        function resaltarPeriodos(resultados) {
+            // Primero, remover la clase de todos los botones
+            document.querySelectorAll('.periodo-btn').forEach(btn => {
+                btn.classList.remove('contains-results');
+            });
+
+            if (resultados.length === 0) return;
+
+            // Crear un conjunto de períodos únicos que contienen resultados
+            const periodosConResultados = new Set();
+            
+            resultados.forEach(obra => {
+                // Encontrar el período al que pertenece la obra
+                PERIODOS.forEach(periodo => {
+                    const [inicio, fin] = periodo.split('-');
+                    const añoInicio = parseInt(inicio);
+                    const añoFin = parseInt(fin.split('_')[0]);
+                    
+                    // Si la obra tiene fecha, intentar encontrar un año
+                    if (obra.fecha) {
+                        const añoMatch = obra.fecha.match(/\d{4}/);
+                        if (añoMatch) {
+                            const año = parseInt(añoMatch[0]);
+                            if (año >= añoInicio && año <= añoFin) {
+                                periodosConResultados.add(periodo);
+                            }
+                        } else {
+                            // Si no encontramos un año en la fecha, verificar si la fecha contiene el rango del período
+                            if (obra.fecha.includes(inicio) || obra.fecha.includes(fin.split('_')[0])) {
+                                periodosConResultados.add(periodo);
+                            }
+                        }
+                    }
+                    
+                    // También verificar si el período está mencionado en otros campos
+                    const textoCompleto = JSON.stringify(obra).toLowerCase();
+                    if (textoCompleto.includes(inicio) || textoCompleto.includes(fin.split('_')[0])) {
+                        periodosConResultados.add(periodo);
+                    }
+                });
+            });
+
+            // Resaltar los botones de los períodos que contienen resultados
+            periodosConResultados.forEach(periodo => {
+                const boton = document.querySelector(`.periodo-btn[onclick*="${periodo}"]`);
+                if (boton) {
+                    boton.classList.add('contains-results');
+                }
+            });
+        }
+
+        // Función auxiliar para formatear las claves
+        function formatKey(key) {
+            return key
+                .split('_')
+                .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+                .join(' ');
+        }
+
+        // Función auxiliar para formatear los valores
+        function formatValue(value) {
+            if (Array.isArray(value)) {
+                return value.join(', ');
+            }
+            if (typeof value === 'object' && value !== null) {
+                return Object.entries(value)
+                    .map(([k, v]) => `${formatKey(k)}: ${v}`)
+                    .join(', ');
+            }
+            return value;
+        }
+
+        // Nueva función para mostrar obras por época
+        async function mostrarObrasPorEpoca() {
+            const resultadosDiv = document.getElementById('resultados');
+            let contenidoHTML = '';
+
+            for (const periodo of PERIODOS) {
+                try {
+                    const response = await fetch(`${BASE_URL}/${periodo}.json`);
+                    const data = await response.json();
+                    const obras = data.obras || [];
+
+                    if (obras.length > 0) {
+                        contenidoHTML += `
+                            <div class="periodo-section">
+                                <h2 class="periodo-title">${formatearPeriodo(periodo)}</h2>
+                                ${obras.map(obra => `
+                                    <div class="obra">
+                                        <h3>${obra.titulo || 'Sin título'}</h3>
+                                        <p><strong>Autor:</strong> ${obra.autor || 'Desconocido'}</p>
+                                        <p><strong>Fecha:</strong> ${obra.fecha || 'No especificada'}</p>
+                                        ${obra.personajes ? `
+                                            <p><strong>Personajes:</strong> ${obra.personajes.join(', ')}</p>
+                                        ` : ''}
+                                        ${obra.detalles ? `
+                                            <div class="detalle-card">
+                                                <h4>Detalles de la obra</h4>
+                                                ${Object.entries(obra.detalles).map(([key, value]) => `
+                                                    <div class="detalle-item">
+                                                        <strong>${formatKey(key)}:</strong> ${formatValue(value)}
+                                                    </div>
+                                                `).join('')}
+                                            </div>
+                                        ` : ''}
+                                        ${obra.subobras ? `
+                                            <p><strong>Subobras:</strong></p>
+                                            ${obra.subobras.map(subobra => `
+                                                <div class="subobra">
+                                                    <h4>${subobra.titulo || 'Sin título'}</h4>
+                                                    ${subobra.personajes ? `
+                                                        <p><strong>Personajes:</strong> ${subobra.personajes.join(', ')}</p>
+                                                    ` : ''}
+                                                </div>
+                                            `).join('')}
+                                        ` : ''}
+                                    </div>
+                                `).join('')}
+                            </div>
+                        `;
+                    }
+                } catch (error) {
+                    console.error(`Error al cargar el período ${periodo}:`, error);
+                }
+            }
+
+            resultadosDiv.innerHTML = contenidoHTML;
+        }
+    </script>
+</body>
+</html>
