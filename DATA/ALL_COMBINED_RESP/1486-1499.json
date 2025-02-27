@@ -2,7 +2,7 @@
     "periodo": "1486-1499",
     "obras": [
       {
-        "id": 1,
+        "id": "1486_1",
         "titulo": "Representación de la Pasión",
         "autor": "ANÓNIMA",
         "fecha": "ca. 1486",
@@ -12,7 +12,7 @@
         }
       },
       {
-        "id": 2,
+        "id": "1486_2",
         "titulo": "Égloga hecha por Francisco de Madrid",
         "autor": "FRANCISCO DE MADRID",
         "fecha": "ca. 1495",
@@ -27,56 +27,56 @@
         }
       },
       {
-        "id": 3,
+        "id": "1486_3",
         "titulo": "Cancionero de las obras de Juan del Enzina",
         "autor": "JUAN DEL ENCINA",
         "fecha": "1496",
         "lugar": "Salamanca",
         "subobras": [
           {
-            "id": "3.1",
+            "id": "1486_3.1",
             "titulo": "Égloga representada en la noche de la Natividad de Nuestro Salvador",
             "personajes": ["Juan", "Mateo"]
           },
           {
-            "id": "3.2",
+            "id": "1486_3.2",
             "titulo": "Égloga representada en la misma noche de Navidad",
             "personajes": ["Juan", "Mateo", "Lucas", "Marco"]
           },
           {
-            "id": "3.3",
+            "id": "1486_3.3",
             "titulo": "Representación a la muy bendita Pasión y Muerte de Nuestro precioso Redentor",
             "personajes": ["Hermitaño viejo", "Hermitaño mozo", "Verónica", "Ángel"]
           },
           {
-            "id": "3.4",
+            "id": "1486_3.4",
             "titulo": "Representación a la Santísima Resurrección de Cristo",
             "personajes": ["Joseph", "Madalena", "Cleofás", "San Lucas", "Ángel"]
           },
           {
-            "id": "3.5",
+            "id": "1486_3.5",
             "titulo": "Égloga representada en la noche postrera de Carnal",
             "personajes": ["Beneito", "Bras", "Pedruelo", "Loriente"]
           },
           {
-            "id": "3.6",
+            "id": "1486_3.6",
             "titulo": "Égloga representada la misma noche de Antruejo o Carnestollendas",
             "personajes": ["Beneito", "Bras", "Loriente", "Pedruelo"]
           },
           {
-            "id": "3.7",
+            "id": "1486_3.7",
             "titulo": "Égloga representada en requesta de unos amores",
             "personajes": ["Pascuala", "Mingo", "Escudero"]
           },
           {
-            "id": "3.8",
+            "id": "1486_3.8",
             "titulo": "Égloga representada por las mesmas personas",
             "personajes": ["Gil", "Pascuala", "Mingo", "Menga"]
           }
         ]
       },
       {
-        "id": 4,
+        "id": "1486_4",
         "titulo": "Égloga entre Juan Molinero [e] Íñigo Sitio sobre el molino de Vascarlón",
         "autor": "ANÓNIMA",
         "fecha": "ca. 1496",
@@ -86,7 +86,7 @@
         }
       },
       {
-        "id": 5,
+        "id": "1486_5",
         "titulo": "Coplas en español del Bachiller de la Pradilla sobre la recepción del Obispo de Calahorra",
         "autor": "BACHILLER DE LA PRADILLA",
         "fecha": "1499?",
