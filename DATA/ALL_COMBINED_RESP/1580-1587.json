@@ -1,167 +1,136 @@
 {
-    "periodo": "1570-1579",
-    "obras": [
-      {
-        "id": 1,
-        "titulo": "Adición de la Comedia de Preteo y Tibaldo",
-        "autores": ["PEDRO ÁLVAREZ DE AYLLÓN", "LUIS HURTADO DE TOLEDO"],
-        "fecha": "1570",
-        "detalles": {
-          "subtitulo": "llamada Disputa y remedio de amor",
-          "imprenta": "casa de Bernardino de Sancto Domingo",
-          "lugar": "Valladolid",
-          "personajes": [
-            "Hilario", "Preteo", "Tibaldo", "Gríseo",
-            "Polindra", "Belisa"
-          ],
-          "subobras": [
-            {
-              "id": "1.2",
-              "titulo": "Égloga Silvana del galardón de amor",
-              "autor": "Luis Hurtado",
-              "personajes": [
-                "Silvano", "Quirino", "Lascibo",
-                "Silvia", "Rosedo"
-              ]
-            }
-          ]
-        }
-      },
-      {
-        "id": 2,
-        "titulo": "Comedia pastoril española",
-        "autor": "ANÓNIMA",
-        "fecha": "ca. 1570-1586",
-        "detalles": {
-          "estado": "manuscrita de mano de un escriba italiano del siglo XVIII y mutila de las primeras páginas",
-          "editor": "José Ignacio Úzquiza González",
-          "publicacion": "Cáceres, Universidad, 1982"
-        }
-      },
-      {
-        "id": 3,
-        "titulo": "Victoria de Christo",
-        "autor": "BARTOLOME PALAU",
-        "fecha": "1570",
-        "detalles": {
-          "imprenta": "casa de Juan Navarro",
-          "lugar": "Valencia",
-          "formato": "8°",
-          "editor_fragmentos": "Leo Rouanet",
-          "partes_publicadas": ["auto I", "auto III", "auto IV"]
-        }
-      },
-      {
-        "id": 4,
-        "titulo": "Las cuatro comedias y dos coloquios pastoriles",
-        "autor": "LOPE DE RUEDA",
-        "fecha": "1570",
-        "detalles": {
-          "editor": "Juan de Timoneda",
-          "notas": "¿Segunda reimpresión de la edición de Valencia de 1567?"
-        }
-      },
-      {
-        "id": 5,
-        "titulo": "Registro de representantes",
-        "autor": "LOPE DE RUEDA",
-        "editor": "Ioan Timoneda",
-        "fecha": "1570",
-        "subobras": [
+  "periodo": "1580-1587",
+  "obras": [
+    {
+      "id": 1,
+      "titulo": "Égloga entre Torino, Guillardo y Quiral, pastores, y Benita e Iliana, pastoras",
+      "autor": "ANÓNIMA",
+      "fecha": "1580",
+      "detalles": {
+        "ediciones": [
           {
-            "id": "5.1",
-            "titulo": "Passo primero del médico simple",
-            "personajes": ["Monserrate", "Alguazil", "Coladilla", "Lumilla", "Valverde", "Porquerón"]
+            "lugar": "Salamanca",
+            "notas": "de la Questión de Amor ...; con la Cárcel de amor, citada por P. SALVÁ"
           },
           {
-            "id": "5.2",
-            "titulo": "Passo segundo de los ladrones",
-            "personajes": ["Cañorla", "Salinas", "Buitrago", "Ioan de Buenalma"]
-          },
-          {
-            "id": "5.3",
-            "titulo": "Tercer passo de Rodrigo del Toro",
-            "personajes": ["Gutiérrez de Santiváñez", "Inesa López", "Margarita", "Rodrigo de Toro", "Salmerón"]
-          },
-          {
-            "id": "5.4",
-            "titulo": "Passo quarto",
-            "personajes": ["Madrijalejo", "Alguazil", "Molina", "un paje"]
-          },
-          {
-            "id": "5.5",
-            "titulo": "Quinto passo",
-            "personajes": ["Siguënça", "Sebastiana", "Estepa"]
-          },
-          {
-            "id": "5.6",
-            "titulo": "Sexto passo",
-            "personajes": ["Dalagón", "Pancorvo", "Periquillo", "Peryutón", "Gascón", "Gulliomillo"]
-          },
-          {
-            "id": "5.7",
-            "titulo": "Coloquio llamado Prendas de amor"
-          }
-        ]
-      },
-      {
-        "id": 6,
-        "titulo": "La Constanza",
-        "autor": "GASPAR VAZQUEZ",
-        "fecha": "1570",
-        "detalles": {
-          "impresor": "Sebastián Martínez",
-          "lugar": "Alcalá de Henares"
-        }
-      },
-      {
-        "id": 7,
-        "titulo": "Comedia intitulada Dolería del sueño del Mundo",
-        "autor": "HURTADO DE LA VERA",
-        "fecha": "1571",
-        "detalles": {
-          "lugar": "Anvers",
-          "formato": "12º, 11 + 142 hs",
-          "otras_ediciones": [
-            {"año": "1595", "lugar": "Amberes"},
-            {"año": "1614", "lugar": "París"}
-          ],
-          "editor": "Marcelino MENÉNDEZ PELAYO"
-        }
-      },
-      {
-        "id": 8,
-        "titulo": "Propalladia",
-        "autor": "BARTOLOME DE TORRES NAHARRO",
-        "fecha": "1573",
-        "detalles": {
-          "imprenta": "taller de Pierres Cosin",
-          "lugar": "Madrid",
-          "censor": "Juan López de Velasco"
-        }
-      },
-      {
-        "id": 15,
-        "titulo": "Ternario Sacramental",
-        "autor": "JUAN TIMONEDA",
-        "fecha": "1575",
-        "subobras": [
-          {
-            "id": "15.1",
-            "titulo": "La Pastorela",
-            "personajes": ["San Pedro", "Christo", "Ángel Custodio", "Ángel Miguel", "El Appetito"]
-          },
-          {
-            "id": "15.2",
-            "titulo": "Misteri sobre lo Sagrat Euangeli",
-            "personajes": ["Joan González", "Mariamendralcs", "Antón", "Christ", "Lluch", "Cleophás", "Plaer", "Content", "Desig humà"]
-          },
-          {
-            "id": "15.3",
-            "titulo": "Misteri ecclesiástich",
-            "personajes": ["Església", "Christo", "Gregori Papa", "Philip Rey", "Libertat", "Oppinió", "S. Augustí", "S. Thomás"]
+            "lugar": "Lovaina",
+            "impresor": "Roger Velpio"
           }
         ]
       }
-    ]
-  }
+    },
+    {
+      "id": 2,
+      "autor": "JOAQUÍN ROMERO DE CEPEDA",
+      "fecha": "1582",
+      "detalles": {
+        "titulo_completo": "Obras de Joaquin Romero de Zepeda, vezino de Badajoz",
+        "dedicatoria": "Dirigidas al muy Ilustre señor Don Luis de Molina Barrientos",
+        "imprenta": "Andrea Pescioni",
+        "lugar": "Sevilla",
+        "formato": "4º, 140 hs",
+        "editores_modernos": [
+          {
+            "editor": "Eugenio de OCHOA",
+            "obra": "Tesoro del teatro español",
+            "lugar": "Paris",
+            "año": "1838"
+          }
+        ]
+      },
+      "subobras": [
+        {
+          "id": "2.1",
+          "titulo": "Comedia Metamorfosea"
+        },
+        {
+          "id": "2.2",
+          "titulo": "Comedia Salvaje",
+          "subtitulo": "en la cual por muy delicado estilo y artificio se descubre lo que de las aluchuetas a las honestas doncellas se les sigue"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "autor": "BARTOLOMÉ CAIRASCO DE FIGUEROA",
+      "subobras": [
+        {
+          "id": "3.1",
+          "titulo": "Tragedia y martirio de Santa Catherina de Alexandria",
+          "personajes": [
+            "El que dice el argumento",
+            "Inspiración",
+            "El que le de el dedo",
+            "Lumbre Natural",
+            "El Demonio",
+            "Engaño",
+            "Rodamonte",
+            "Belián",
+            "Dos Alabarderos",
+            "Capitán de La Guardia",
+            "El Emperador Magençio",
+            "Sacerdote",
+            "Agorero",
+            "Sancta Catherina",
+            "Dos Sabios",
+            "Capitán Porfirio",
+            "Emperatriz Faustina",
+            "Un Ángel",
+            "Perseverancia",
+            "Paciencia",
+            "Verdugo",
+            "Cuatro Ángeles",
+            "Una donzella suya"
+          ]
+        },
+        {
+          "id": "3.2",
+          "titulo": "Comedia del Recibimiento que se le hizo al reverendissimo señor don Fernando de Rueda",
+          "fecha": "1582",
+          "personajes": [
+            "Sabiduría",
+            "Curiosidad",
+            "Invención",
+            "Doramas",
+            "Gáldar",
+            "Guía"
+          ]
+        },
+        {
+          "id": "3.3",
+          "titulo": "Comedia del Alma para el día del Corpus Christi",
+          "personajes": [
+            "Inspiración divina",
+            "Libre Albredío",
+            "Alma",
+            "Ocio",
+            "Murmuración",
+            "Consideración",
+            "Mala Inclinación",
+            "Ración",
+            "Pecadillo Venial",
+            "Feo",
+            "Caridad",
+            "Esperanza",
+            "Príncipe Tenebroso",
+            "Pecado Mortal",
+            "Hipocresía",
+            "Regalo",
+            "Vigilancia",
+            "Entendimiento",
+            "Sensualidad",
+            "Orpheo",
+            "Mundo",
+            "Carne",
+            "Espíritu"
+          ]
+        },
+        {
+          "id": "3.4",
+          "titulo": "Tragedia de Sancta Susana para el día del Corpus",
+          "fecha": "1582"
+        }
+      ]
+    }
+  ]
+}
