@@ -244,11 +244,48 @@
             border-bottom: 2px solid var(--detail-color);
             font-size: 1.8rem;
         }
+
+        /* Estilos para el loader */
+        .loader-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .loader-container img {
+            width: 100px;
+            height: 100px;
+            animation: pulse 1.5s ease-in-out infinite;
+        }
+
+        .loader-text {
+            margin-top: 1rem;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.95);
+                opacity: 0.8;
+            }
+            50% {
+                transform: scale(1.05);
+                opacity: 1;
+            }
+            100% {
+                transform: scale(0.95);
+                opacity: 0.8;
+            }
+        }
     </style>
 </head>
 <body>
     <div class="logo-container">
-        <img src="../teaxvi.svg" alt="Teatro Histórico Español">
+        <img src="https://raw.githubusercontent.com/iccmu/XVI_catalogo/refs/heads/main/teaxvi.svg" alt="Teatro Histórico Español">
         <h1>Nuevo catálogo del teatro español del siglo XVI</h1>
     </div>
     
@@ -260,7 +297,12 @@
     </div>
 
     <div id="periodos" class="periodos-list"></div>
-    <div id="resultados"></div>
+    <div id="resultados">
+        <div class="loader-container">
+            <img src="https://raw.githubusercontent.com/iccmu/XVI_catalogo/refs/heads/main/teaxvi.svg" alt="Cargando...">
+            <div class="loader-text">Cargando datos...</div>
+        </div>
+    </div>
 
     <script>
         const BASE_URL = 'https://raw.githubusercontent.com/iccmu/XVI_catalogo/main/DATA/ALL_COMBINED_RESP';
@@ -350,6 +392,16 @@
         }
 
         async function cargarPeriodo(periodo) {
+            const resultadosDiv = document.getElementById('resultados');
+            
+            // Mostrar loader mientras se carga
+            resultadosDiv.innerHTML = `
+                <div class="loader-container">
+                    <img src="https://raw.githubusercontent.com/iccmu/XVI_catalogo/refs/heads/main/teaxvi.svg" alt="Cargando...">
+                    <div class="loader-text">Cargando período ${formatearPeriodo(periodo)}...</div>
+                </div>
+            `;
+
             // Obtener el botón del período actual
             const botonPeriodo = document.querySelector(`.periodo-btn[onclick*="${periodo}"]`);
             
@@ -368,7 +420,6 @@
                 const obras = data.obras || [];
                 
                 // Mostrar resultados con el título del período
-                const resultadosDiv = document.getElementById('resultados');
                 resultadosDiv.innerHTML = `
                     <div class="periodo-section">
                         <h2 class="periodo-title">${formatearPeriodo(periodo)}</h2>
@@ -413,7 +464,7 @@
                 botonPeriodo?.classList.add('contains-results');
             } catch (error) {
                 console.error('Error al cargar el período:', error);
-                document.getElementById('resultados').innerHTML = 
+                resultadosDiv.innerHTML = 
                     '<p>Error al cargar los datos. Por favor, intente nuevamente.</p>';
             }
         }
@@ -445,14 +496,22 @@
             resaltarPeriodos(resultados);
         }
 
-        function mostrarResultados(obras) {
+        async function mostrarResultados(obras) {
+            const resultadosDiv = document.getElementById('resultados');
+            
             if (!Array.isArray(obras)) {
                 console.error('Los datos recibidos no son un array:', obras);
                 return;
             }
 
-            const resultadosDiv = document.getElementById('resultados');
-            
+            // Mostrar loader mientras se procesa
+            resultadosDiv.innerHTML = `
+                <div class="loader-container">
+                    <img src="https://raw.githubusercontent.com/iccmu/XVI_catalogo/refs/heads/main/teaxvi.svg" alt="Cargando...">
+                    <div class="loader-text">Procesando resultados...</div>
+                </div>
+            `;
+
             // Ordenar obras por período y luego por ID
             obras.sort((a, b) => {
                 const periodoA = a.id.split('_')[0];
@@ -597,6 +656,15 @@
         // Nueva función para mostrar obras por época
         async function mostrarObrasPorEpoca() {
             const resultadosDiv = document.getElementById('resultados');
+            
+            // Mostrar loader mientras se cargan todas las épocas
+            resultadosDiv.innerHTML = `
+                <div class="loader-container">
+                    <img src="https://raw.githubusercontent.com/iccmu/XVI_catalogo/refs/heads/main/teaxvi.svg" alt="Cargando...">
+                    <div class="loader-text">Cargando todas las obras...</div>
+                </div>
+            `;
+
             let contenidoHTML = '';
 
             for (const periodo of PERIODOS) {
