@@ -507,6 +507,13 @@
             const autor = normalizarTexto(document.getElementById('autor').value);
             const fecha = document.getElementById('fecha').value;
             
+            // Si todos los campos están vacíos, restaurar los contadores originales
+            if (!titulo && !autor && !fecha) {
+                cargarPeriodos();
+                mostrarObrasPorEpoca();
+                return;
+            }
+            
             // Mostrar loader mientras se procesa la búsqueda
             document.getElementById('resultados').innerHTML = `
                 <div class="loader-container">
@@ -669,15 +676,18 @@
 
             if (resultados.length === 0) return;
 
-            // Crear un conjunto de períodos únicos que contienen resultados
-            const periodosConResultados = new Set();
+            // Crear un objeto para contar los resultados por período
+            const resultadosPorPeriodo = {};
+            PERIODOS.forEach(periodo => {
+                resultadosPorPeriodo[periodo] = 0;
+            });
             
             resultados.forEach(obra => {
                 // Si la obra tiene id, intentar usarlo para determinar el período
                 if (typeof obra.id === 'string') {
                     PERIODOS.forEach(periodo => {
                         if (obra.id.includes(periodo)) {
-                            periodosConResultados.add(periodo);
+                            resultadosPorPeriodo[periodo]++;
                         }
                     });
                 }
@@ -694,12 +704,12 @@
                         if (añoMatch) {
                             const año = parseInt(añoMatch[0]);
                             if (año >= añoInicio && año <= añoFin) {
-                                periodosConResultados.add(periodo);
+                                resultadosPorPeriodo[periodo]++;
                             }
                         } else {
                             // Si no encontramos un año en la fecha, verificar si la fecha contiene el rango del período
                             if (obra.fecha.includes(inicio) || obra.fecha.includes(fin.split('_')[0])) {
-                                periodosConResultados.add(periodo);
+                                resultadosPorPeriodo[periodo]++;
                             }
                         }
                     }
@@ -707,18 +717,27 @@
                     // También verificar si el período está mencionado en otros campos
                     const textoCompleto = JSON.stringify(obra).toLowerCase();
                     if (textoCompleto.includes(inicio) || textoCompleto.includes(fin.split('_')[0])) {
-                        periodosConResultados.add(periodo);
+                        resultadosPorPeriodo[periodo]++;
                     }
                 });
             });
 
-            // Resaltar los botones de los períodos que contienen resultados
-            periodosConResultados.forEach(periodo => {
+            // Actualizar los contadores y resaltar los botones
+            for (const periodo in resultadosPorPeriodo) {
                 const boton = document.querySelector(`.periodo-btn[onclick*="${periodo}"]`);
                 if (boton) {
-                    boton.classList.add('contains-results');
+                    // Actualizar el contador
+                    const contador = boton.querySelector('.contador');
+                    if (contador) {
+                        contador.textContent = resultadosPorPeriodo[periodo];
+                    }
+                    
+                    // Resaltar el botón si tiene resultados
+                    if (resultadosPorPeriodo[periodo] > 0) {
+                        boton.classList.add('contains-results');
+                    }
                 }
-            });
+            }
         }
 
         // Función auxiliar para formatear las claves
