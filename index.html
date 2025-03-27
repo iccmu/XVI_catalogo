@@ -344,15 +344,41 @@
 
         async function cargarTodasLasObras() {
             try {
-                for (const periodo of PERIODOS) {
-                    const response = await fetch(`${BASE_URL}/${periodo}.json`);
-                    const data = await response.json();
-                    if (data.obras) {
-                        todasLasObras = todasLasObras.concat(data.obras);
-                    }
-                }
+                todasLasObras = [];
+                document.getElementById('resultados').innerHTML = `
+                    <div class="loader-container">
+                        <img src="https://raw.githubusercontent.com/iccmu/XVI_catalogo/refs/heads/main/teaxvi.svg" alt="Cargando...">
+                        <div class="loader-text">Cargando datos iniciales...</div>
+                    </div>
+                `;
+                
+                const promises = PERIODOS.map(periodo => 
+                    fetch(`${BASE_URL}/${periodo}.json`)
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.obras) {
+                                return data.obras;
+                            }
+                            return [];
+                        })
+                        .catch(error => {
+                            console.error(`Error cargando período ${periodo}:`, error);
+                            return [];
+                        })
+                );
+                
+                const resultados = await Promise.all(promises);
+                todasLasObras = resultados.flat();
+                
+                // Una vez que todos los datos están cargados, mostrar las obras
+                mostrarObrasPorEpoca();
             } catch (error) {
                 console.error('Error al cargar todas las obras:', error);
+                document.getElementById('resultados').innerHTML = `
+                    <div class="obra" style="text-align: center;">
+                        <h3>Error al cargar los datos</h3>
+                        <p>Por favor, recargue la página e intente nuevamente</p>
+                    </div>`;
             }
         }
 
@@ -480,20 +506,47 @@
             const titulo = normalizarTexto(document.getElementById('titulo').value);
             const autor = normalizarTexto(document.getElementById('autor').value);
             const fecha = document.getElementById('fecha').value;
+            
+            // Mostrar loader mientras se procesa la búsqueda
+            document.getElementById('resultados').innerHTML = `
+                <div class="loader-container">
+                    <img src="https://raw.githubusercontent.com/iccmu/XVI_catalogo/refs/heads/main/teaxvi.svg" alt="Cargando...">
+                    <div class="loader-text">Procesando resultados...</div>
+                </div>
+            `;
 
-            const resultados = todasLasObras.filter(obra => {
-                const tituloNormalizado = obra.titulo ? normalizarTexto(obra.titulo) : '';
-                const autorNormalizado = obra.autor ? normalizarTexto(obra.autor) : '';
-                
-                const coincideTitulo = !titulo || tituloNormalizado.includes(titulo);
-                const coincideAutor = !autor || autorNormalizado.includes(autor);
-                const coincideFecha = !fecha || obra.fecha?.includes(fecha);
-                
-                return coincideTitulo && coincideAutor && coincideFecha;
-            });
+            // Comprobar si tenemos datos cargados
+            if (todasLasObras.length === 0) {
+                document.getElementById('resultados').innerHTML = `
+                    <div class="obra" style="text-align: center;">
+                        <h3>Datos no disponibles</h3>
+                        <p>Espere a que se carguen los datos iniciales o recargue la página</p>
+                    </div>`;
+                return;
+            }
 
-            mostrarResultados(resultados);
-            resaltarPeriodos(resultados);
+            try {
+                const resultados = todasLasObras.filter(obra => {
+                    const tituloNormalizado = obra.titulo ? normalizarTexto(obra.titulo) : '';
+                    const autorNormalizado = obra.autor ? normalizarTexto(obra.autor) : '';
+                    
+                    const coincideTitulo = !titulo || tituloNormalizado.includes(titulo);
+                    const coincideAutor = !autor || autorNormalizado.includes(autor);
+                    const coincideFecha = !fecha || obra.fecha?.includes(fecha);
+                    
+                    return coincideTitulo && coincideAutor && coincideFecha;
+                });
+
+                mostrarResultados(resultados);
+                resaltarPeriodos(resultados);
+            } catch (error) {
+                console.error('Error en la búsqueda:', error);
+                document.getElementById('resultados').innerHTML = `
+                    <div class="obra" style="text-align: center;">
+                        <h3>Error en la búsqueda</h3>
+                        <p>Ocurrió un problema al procesar su búsqueda</p>
+                    </div>`;
+            }
         }
 
         async function mostrarResultados(obras) {
@@ -504,22 +557,24 @@
                 return;
             }
 
-            // Mostrar loader mientras se procesa
-            resultadosDiv.innerHTML = `
-                <div class="loader-container">
-                    <img src="https://raw.githubusercontent.com/iccmu/XVI_catalogo/refs/heads/main/teaxvi.svg" alt="Cargando...">
-                    <div class="loader-text">Procesando resultados...</div>
-                </div>
-            `;
-
-            // Ordenar obras por período y luego por ID
+            // Ordenar obras por período y luego por ID (con manejo de errores)
             obras.sort((a, b) => {
-                const periodoA = a.id.split('_')[0];
-                const periodoB = b.id.split('_')[0];
+                // Verificar si los objetos tienen la propiedad id y son strings
+                const idA = typeof a.id === 'string' ? a.id : '';
+                const idB = typeof b.id === 'string' ? b.id : '';
+                
+                // Si no hay id, usar otro campo para ordenar o devolver 0
+                if (!idA || !idB) {
+                    return (a.fecha || '').localeCompare(b.fecha || '');
+                }
+                
+                const periodoA = idA.split('_')[0] || '';
+                const periodoB = idB.split('_')[0] || '';
+                
                 if (periodoA !== periodoB) {
                     return periodoA.localeCompare(periodoB);
                 }
-                return a.id.localeCompare(b.id);
+                return idA.localeCompare(idB);
             });
 
             if (obras.length === 0) {
@@ -531,9 +586,34 @@
                 return;
             }
 
-            // Agrupar obras por período
+            // Agrupar obras por período con manejo de errores
             const obrasPorPeriodo = obras.reduce((acc, obra) => {
-                const periodo = obra.id.split('_')[0];
+                // Determinar el período de la obra de manera segura
+                let periodo = "Período desconocido";
+                
+                if (typeof obra.id === 'string') {
+                    const idParts = obra.id.split('_');
+                    if (idParts.length > 0) {
+                        periodo = idParts[0];
+                    }
+                } else if (obra.fecha) {
+                    // Intentar extraer el período de la fecha
+                    const añoMatch = obra.fecha.match(/\d{4}/);
+                    if (añoMatch) {
+                        const año = parseInt(añoMatch[0]);
+                        // Encontrar el período adecuado
+                        for (const p of PERIODOS) {
+                            const [inicio, fin] = p.split('-');
+                            const añoInicio = parseInt(inicio);
+                            const añoFin = parseInt(fin.split('_')[0]);
+                            if (año >= añoInicio && año <= añoFin) {
+                                periodo = p;
+                                break;
+                            }
+                        }
+                    }
+                }
+                
                 if (!acc[periodo]) {
                     acc[periodo] = [];
                 }
@@ -593,7 +673,16 @@
             const periodosConResultados = new Set();
             
             resultados.forEach(obra => {
-                // Encontrar el período al que pertenece la obra
+                // Si la obra tiene id, intentar usarlo para determinar el período
+                if (typeof obra.id === 'string') {
+                    PERIODOS.forEach(periodo => {
+                        if (obra.id.includes(periodo)) {
+                            periodosConResultados.add(periodo);
+                        }
+                    });
+                }
+                
+                // Encontrar el período al que pertenece la obra por fechas
                 PERIODOS.forEach(periodo => {
                     const [inicio, fin] = periodo.split('-');
                     const añoInicio = parseInt(inicio);
